@@ -1,0 +1,78 @@
+MainMenu
+choice ← 0
+:Repeat
+⎕←'================================'
+⎕←'  Digital Date Marker for Coffee Shops and Restaurants'
+⎕←'================================'
+⎕←'1. One Day'
+⎕←'2. Two Days'
+⎕←'3. Three Days'
+⎕←'4. Foccacia'
+⎕←'5. Thirty Days'
+⎕←'6. Thirty Days-Custom Date'
+⎕←'7. Custom Date'
+⎕←'8. Bryggkaffe'
+⎕←'9. Frapino'
+⎕←'0. Power off'
+
+
+choice ← ⎕
+
+:Select choice
+
+:Case 1
+One
+⎕←'This function prints one day duration of the product.'
+⎕←''
+
+:Case 2
+Two
+⎕←'This function prints two days duration of the product.'
+⎕←''
+
+:Case 3
+Three
+⎕←'This function prints three days duration of the product.'
+⎕←''
+
+:Case 4
+Foccacia
+⎕←''
+
+:Case 5
+Thirty
+⎕←'This function prints thirty days duration of the product.'
+
+:Case 6
+⎕←'Enter your custom date ( year, month, day) and it will print thirty days duration of the product.'
+(y m d) ← ⎕
+ThirtyCustomDate ( y m d)
+⎕←''
+
+:Case 7
+⎕←'Enter the number of days for the product duration. Must be less or equal 30'
+n←⎕
+⎕←'Now enter the custom date (year, month, day) to calculate the product expiration date'
+(y m d) ← ⎕
+n CustomDate ( y m d)
+⎕←''
+
+:Case 8
+Bryggkaffe
+⎕←'This function prints the production time of the filter coffee and its expiration time (hourly).'
+⎕←''
+
+:Case 9
+Frapino
+
+
+
+
+
+
+:Case 0
+⎕←'Power off!'
+:Else
+⎕←'Invalid input'
+:EndSelect
+:Until choice=0

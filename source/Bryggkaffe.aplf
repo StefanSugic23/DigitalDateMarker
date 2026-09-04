@@ -1,0 +1,23 @@
+Bryggkaffe
+⎕←'Item produced: BRYGGKAFFE'
+⎕←'Duration: 1 hour and 45 minutes'
+⎕←''
+
+:If ⎕ts[5]<10
+⎕←'Produced at: ' ,(⍕⎕ts[4]),':',(2↑'0',⍕⎕ts[5])
+:Else
+⎕←'Produced at: ' ,(⍕⎕ts[4]),':',(2↑⍕⎕ts[5])
+:EndIf
+
+:If ⎕ts[4]>18
+⎕←'Not possible, closing soon'
+
+:ElseIf ((45+⎕ts[5])>60) ∧ (((45+⎕ts[5])-60)<10)
+⎕←'Expires at: ' ,  (⍕(2+⎕ts[4])),':',(2↑'0',(⍕((45+⎕ts[5])-60)))
+:ElseIf ((45+⎕ts[5])>60) ∧ (((45+⎕ts[5])-60)≥10)
+⎕←'Expires at: ' ,  (⍕(2+⎕ts[4])),':',(2↑⍕(45+⎕ts[5])-60)
+
+:Else
+⎕←'Expires at: ', (⍕(1+⎕ts[4])),':',(2↑⍕(45+⎕ts[5]))
+:EndIf
+⎕←'Working hours: 10.00-20.00'

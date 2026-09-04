@@ -1,0 +1,23 @@
+n CustomDate x
+(y m d) ← x
+
+⎕←'Date Produced: ' , x
+:If (n>30) ∨ (m>12) ∨ (d>31)
+⎕←'Number must be less or equal than 30 or error in date'
+:ElseIf ((n+d)>31) ∧ ((m=1)∨(m=3)∨(m=5)∨(m=7)∨(m=8)∨(m=10))
+
+⎕← 'Date of expiration: ' , y, (1+m), ((n+d)-31)
+
+:ElseIf ((n+d)>30)∧((m=4)∨(m=6)∨(m=9)∨(m=11))
+⎕←  'Date of expiration: ' , y, (1+m), ((n+d)-30)
+:ElseIf ((n+d)>28)∧ (m=2) ∧ ((0=4|y)=0)
+⎕←'Date of expiration: ' , y, (1+m), ((n+d)-28)
+:ElseIf ((n+d)>29)∧ (m=2) ∧ ((0=4|y)=1)
+⎕←'Date of expiration: ' , y, (1+m), ((n+d)-29)
+:ElseIf ((n+d)>31) ∧ (m=12)
+⎕←'Date of expiration: ' , (y+1), (m-11), ((n+d)-31)
+:ElseIf ((n+d)>31)∧((m=1)∨(m=3)∨(m=5)∨(m=7)∨(m=8)∨(m=10))
+⎕←  'Date of expiration: ' , y, (1+m), ((n+d)-31)
+:Else
+⎕←'Date of Expiration: ' , y, m, (n+ d)
+:EndIf

@@ -1,0 +1,20 @@
+ Foccacia
+ ⎕←'Item produced: FOCCACIA '
+ ⎕←''
+ ⎕←'Date Produced: ',¯4↓⎕TS
+
+ :If ((1+⎕TS[3])>31)∧((⎕TS[2]=1)∨(⎕TS[2]=3)∨(⎕TS[2]=5)∨(⎕TS[2]=7)∨(⎕TS[2]=8)∨(⎕TS[2]=10))
+
+     ⎕←'Date of expiration: ',⎕TS[1],(1+⎕TS[2]),((1+⎕TS[3])-31)
+
+ :ElseIf ((1+⎕TS[3])>30)∧((⎕TS[2]=4)∨(⎕TS[2]=6)∨(⎕TS[2]=9)∨(⎕TS[2]=11))
+     ⎕←'Date of expiration: ',⎕TS[1],(1+⎕TS[2]),((1+⎕TS[3])-30)
+ :ElseIf ((1+⎕TS[3])>28)∧(⎕TS[2]=2)∧((0=4|⎕TS[1])=0)
+     ⎕←'Date of expiration: ',⎕TS[1],(1+⎕TS[2]),((1+⎕TS[3])-28)
+ :ElseIf ((1+⎕TS[3])>29)∧(⎕TS[2]=2)∧((0=4|⎕TS[1])=1)
+     ⎕←'Date of expiration: ',⎕TS[1],(1+⎕TS[2]),((1+⎕TS[3])-29)
+ :ElseIf ((1+⎕TS[3])>31)∧(⎕TS[2]=12)
+     ⎕←'Date of expiration: ',(⎕TS[1]+1),(⎕TS[2]-11),((1+⎕TS[3])-31)
+ :Else
+     ⎕←'Date of Expiration: ',⎕TS[1],⎕TS[2],(1+⎕TS[3])
+ :EndIf
